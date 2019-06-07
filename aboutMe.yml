@@ -1,6 +1,6 @@
 name: Mark Tong
 studentNumber: z5208473
 officialEmail: z5208473@unsw.edu.au
-contactEmail: marktong1806@gmail.com
+contactEmail:
   firstBit: marktong1806  # this avoids spam, the @ is implied
   otherBit: gmail.com
