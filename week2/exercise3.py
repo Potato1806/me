@@ -235,7 +235,7 @@ def loops_7():
         pyramid.append(starz)
         starz = []
     return pyramid
-   
+
 
 def lp(some_kind_of_list, exercise_name):
     """Help to see what's going on.

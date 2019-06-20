@@ -23,6 +23,5 @@ def week2exercise2():
     print(secret_word)
     return secret_word
 
-
 if __name__ == "__main__":
     print(week2exercise2())

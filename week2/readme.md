@@ -12,3 +12,4 @@ then
 if len(some_words) >3 
 print ('some_words contains more than 3 words)
 since the list has more than 3 words, it would print that
+for command to initiate  loops brotha
