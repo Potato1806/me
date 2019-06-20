@@ -10,20 +10,20 @@ import platform
 
 # I think this will print "hello! Let's get started" by calling the print function.
 print("hello! Let's get started")  # it printed "hello! Let's get started"
-
-some_words = ['what', 'does', 'this', 'line', 'do', '?']
-
+#assigns the words what,does,this,line,do,? to "some_words"
+some_words = ['what', 'does', 'this', 'line', 'do', '?'] #define list aswaht, does, this, line, do, ?
+#all words in the function sonme_word will be printed
 for word in some_words:
-    print(word)
-
+    print(word) #prints all the words in some_words
+#will do the same as the previous command
 for x in some_words:
-    print(x)
-
-print(some_words)
-
+    print(x) #prints all the words in some_words
+#prints all words in some_words all at once
+print(some_words) #prints the function out again aka ['what', 'does', 'this', 'line', 'do', '?']
+#if length of the string is greater than 3 then print some_words contains more than 3 words
 if len(some_words) > 3:
-    print('some_words contains more than 3 words')
-
+    print('some_words contains more than 3 words') #the if statement was correct, so it was printed
+#reset usefulFuntion to have no words in it's list
 def usefulFunction():
     """
     You may want to look up what uname does before you guess
@@ -32,4 +32,4 @@ def usefulFunction():
     """
     print(platform.uname())
 
-usefulFunction()
+usefulFunction()#prints out computer specs prints the platform information
