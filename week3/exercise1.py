@@ -55,8 +55,20 @@ def stubborn_asker(low, high):
 
     Look up the docs for input
     """
-    return 
+    lower = int(low)
+    higher = int(high)
+    bound = False
 
+    while not bound:
+        guess = int(input())
+        if guess > higher:
+            print('ded')
+        elif guess < lower:
+            print('ded')
+        else:
+            bound = True
+            print('Noice')
+    return guess
 
 def not_number_rejector(message):
     """Ask for a number repeatedly until actually given one.
@@ -65,7 +77,15 @@ def not_number_rejector(message):
     (e.g. "cow", "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
     """
-    return None
+    import random
+
+def not_number_rejector(message):
+    while True:
+        try: 
+            value = int(value)
+            return value
+        except:
+            value = input(message)
 
 
 def super_asker(low, high):
@@ -76,7 +96,24 @@ def super_asker(low, high):
     Try to call at least one of the other functions to minimise the
     amount of code.
     """
-    return None
+    print("Guess a number!")
+    lower_bound = int(low)
+    higher_bound = int(high) 
+    bounded = False 
+
+    while not bounded:
+        guess = str(input("Guess A Number: "))
+        if guess.isdigit():
+            if int(guess) < lower_bound:
+                    print ("Higher Lad")
+            elif int(guess) > higher_bound:
+                    print ("Lower Mate")
+            else:
+                    bounded = True
+                    print("Wrong... Jokes")
+        else:
+            print("Definitely Wrong")
+    return guess
 
 
 if __name__ == "__main__":
