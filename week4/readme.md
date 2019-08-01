@@ -28,3 +28,28 @@ if r.status_code == 200
 
 
 append into a list
+
+
+big_boi = 0  #blank slate
+    for i in range(low,high):  #range to look
+        url = template.format(base=template, id=i)
+        r = requests.get(url)
+        if r.status_code is 200:
+            the_json = json.loads(r.text)
+            large_boi = the_json["height"]
+            if large_boi > big_boi:  #if taller is found, then...
+                big_boi = large_boi  #replace previous tallest poke with new tallest
+                nem = the_json["name"]
+                w8t = the_json["weight"]
+                heit = the_json["height"]
+    return {"name": nem, "weight": w8t, "height": heit}
+
+    pewpew = open(C: + "/Trispokedovetiles(laser).gcode").readlines() #open the file to read
+    count = 0  #start with 0
+    for line in pewpew:
+        print(line)
+        if "M10 P1" in line
+        count += 1  #each time M10 P1 is used increase counter
+    f = open("lasers.pew","w")  #open file we write on, w is short for the command write
+    f.write(str(count))
+    f.close
