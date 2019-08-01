@@ -34,14 +34,16 @@ def get_some_details():
          dictionaries.
     """
     json_data = open(LOCAL + "/lazyduck.json").read()
-
     data = json.loads(json_data)
-    return {"lastName": None, "password": None, "postcodePlusID": None}
-
+    lastName = data["results"][0]["name"]["last"]
+    password = data["results"][0]["login"]["password"]
+    postofthecode = data["results"][0]["location"]["postcode"]
+    eyedee = data["results"][0]["id"]["value"]
+    postcodePlusID = int(postofthecode) + int(eyedee)
+    return {"lastName": lastName, "password": password, "postcodePlusID": postcodePlusID}
 
 def wordy_pyramid():
     """Make a pyramid out of real words.
-
     There is a random word generator here:
     http://api.wordnik.com/v4/words.json/randomWords?api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5&minLength=10&maxLength=10&limit=1
     The arguments that the generator takes is the minLength and maxLength of the word
@@ -77,6 +79,7 @@ def wordy_pyramid():
     pass
 
 
+
 def pokedex(low=1, high=5):
     """ Return the name, height and weight of the tallest pokemon in the range low to high.
 
@@ -93,11 +96,19 @@ def pokedex(low=1, high=5):
     """
     template = "https://pokeapi.co/api/v2/pokemon/{id}"
 
-    url = template.format(base=template, id=5)
-    r = requests.get(url)
-    if r.status_code is 200:
-        the_json = json.loads(r.text)
-    return {"name": None, "weight": None, "height": None}
+    big_boi = 0  #blank slate
+    for i in range(low,high):  #range to look
+        url = template.format(base=template, id=i)
+        r = requests.get(url)
+        if r.status_code is 200:
+            the_json = json.loads(r.text)
+            large_boi = the_json["height"]
+            if large_boi > big_boi:  #if taller is found, then...
+                big_boi = large_boi  #replace previous tallest poke with new tallest
+                nem = the_json["name"]
+                w8t = the_json["weight"]
+                heit = the_json["height"]
+    return {"name": nem, "weight": w8t, "height": heit}
 
 
 def diarist():
@@ -114,7 +125,19 @@ def diarist():
          the test will have nothing to look at.
     TIP: this might come in handy if you need to hack a 3d print file in the future.
     """
-    pass
+
+    pewpew = open("/Trispokedovetiles(laser).gcode").readlines() #open the file to read
+    count = 0  #start with 0
+    for line in pewpew:
+        print(line)
+        if "M10 P1" in line
+        count += 1  #each time M10 P1 is used increase counter
+    f = open("lasers.pew","w")  #open file we write on, w is short for the command write
+    f.write(str(count))
+    f.close
+
+
+    
 
 
 if __name__ == "__main__":
