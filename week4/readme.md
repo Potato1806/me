@@ -44,7 +44,7 @@ big_boi = 0  #blank slate
                 heit = the_json["height"]
     return {"name": nem, "weight": w8t, "height": heit}
 
-    pewpew = open(C: + "/Trispokedovetiles(laser).gcode").readlines() #open the file to read
+    pewpew = open(LOCAL + "/Trispokedovetiles(laser).gcode").readlines() #open the file to read
     count = 0  #start with 0
     for line in pewpew:
         print(line)

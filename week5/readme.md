@@ -18,3 +18,12 @@ def do_bunch_of_bad_things():
     yet_another_hyp = 40 ** 2 + 30 ** 2
     print(yet_another_hyp)
 
+import requests
+    webber = "https://us-central-waldenpondpress.cloudfuntions.net/give_me_a_word?wordlength={leng}"
+    
+
+
+turtle format
+
+        trace += koch(t, order-1, size/3)
+    t.left(90)  #direction

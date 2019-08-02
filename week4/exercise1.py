@@ -126,7 +126,15 @@ def diarist():
     TIP: this might come in handy if you need to hack a 3d print file in the future.
     """
 
-    pass
+    pewpew = open(LOCAL + "/Trispokedovetiles(laser).gcode").readlines() #open the file to read
+    count = 0  #start with 0
+    for line in pewpew:
+        print(line)
+        if "M10 P1" in line:
+            count += 1  #each time M10 P1 is used increase counter
+    f = open("lasers.pew","w")  #open file we write on, w is short for the command write
+    f.write(str(count))
+    f.close
 
 
     
