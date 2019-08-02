@@ -99,10 +99,14 @@ def best_letter_for_pets():
     TIP: return just a letter, not the list of animals.
     """
     import string
-
+    counter = 0
     the_alphabet = string.ascii_lowercase
-
-    return ""
+    for i in the_alphabet:
+        number = len(pet_filter(letter = i))
+        if number > counter:
+            boi = i
+            counter = number
+    return boi
 
 
 def make_filler_text_dictionary():
@@ -129,10 +133,16 @@ def make_filler_text_dictionary():
     (i.e. 3, 4, 5, 6, 7 and 3 words for each)
     TIP: you'll need the requests library
     """
-
     import requests
-
-    return {}
+    filler = {}
+    baseURL = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={z}"
+    for i in range(3,8):
+        url = baseURL.format(z=i)
+        filler[i] = []
+        for _ in range(0,3):
+            r = requests.get(url)
+            filler[i].append(r.text)
+    return filler
 
 
 def random_filler_text(number_of_words=200):
@@ -147,7 +157,8 @@ def random_filler_text(number_of_words=200):
     """
     import random
 
-    return ""
+
+    return 
 
 
 def fast_filler(number_of_words=200):
@@ -164,8 +175,30 @@ def fast_filler(number_of_words=200):
 
     If you get this one to work, you are a Very Good Programmer™!
     """
+    import random
+    import json
+    import os
+
+    diction = make_filler_text_dictionary()
+    para = []
+    if ps.path.isfile('dict_racey.json'):
+        print("loading")
+    else:
+        f = open("dict_racey.json","w")
+        dumplings = json.dumps(dictionary)
+        f.writes(dumplings)
+        f.close
+    f = open("dict_racey.json","r")
+    content = f.read
+    look = j.son.loads(content)
+    for i in range(0, number_of_words):
+        key = str(random,randint(3,7))
+        word = random.randint(0,2)
+        para.append(list1[key][word])
+    return(' '.join(para))
 
     return paragraph
+
 
 
 if __name__ == "__main__":
